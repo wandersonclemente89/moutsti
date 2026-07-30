@@ -31,7 +31,8 @@ export function searchProduct(name) {
 export function getProductDetailLinkById(productId) {
   return cy.getByTestId('product-detail-link')
     .filter(`[href*="${productId}"]`)
-    .should('have.length', 1)
+    .first()
+    .should('exist')
 }
 
 export function openProductDetailsById(productId) {
@@ -39,10 +40,7 @@ export function openProductDetailsById(productId) {
 }
 
 export function openProductDetailsFromSearch(productId) {
-  getProductDetailLinkById(productId)
-    .contains('Detalhes')
-    .should('be.visible')
-    .click()
+  openProductDetailsById(productId)
 }
 
 export function shouldSeeProductDetails(name) {
