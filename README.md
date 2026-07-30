@@ -33,8 +33,8 @@ npx cypress run
 Run only the API or UI tests:
 
 ```bash
-npx cypress run --spec "cypress/e2e/api/**/*.cy.js"
-npx cypress run --spec "cypress/e2e/ui/**/*.cy.js"
+npx cypress run --spec "cypress/e2e/api/**.cy.js"
+npx cypress run --spec "cypress/e2e/ui/**.cy.js"
 ```
 
 ## Configuration
